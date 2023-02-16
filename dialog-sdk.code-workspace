@@ -60,10 +60,6 @@
     {
       "path": ".",
       "name": "dialog-sdk root"
-    },
-    {
-      "path": "packages/serverless-configuration",
-      "name": "serverless configuration [library]"
     }
   ]
 }

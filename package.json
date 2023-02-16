@@ -1,20 +1,14 @@
 {
   "name": "@dialog-sdk/root",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "0.1.0",
   "license": "MIT",
   "workspaces": [
-    "contracts/*",
-    "packages/*",
-    "services/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "nx run-many --target=build --all --parallel=4",
-    "deploy": "nx run-many --target=deploy --all --parallel=4",
-    "deploy-affected": "nx affected --target=deploy",
-    "generate-cdk-service": "nx generate @swarmion/nx-plugin:cdk-service",
     "generate-library": "nx generate @swarmion/nx-plugin:library",
-    "generate-service": "nx generate @swarmion/nx-plugin:service",
     "graph": "nx dep-graph",
     "lint-fix": "eslint --ext=js,ts --fix",
     "lint-fix-all": "nx run-many --target=lint-fix-all --all --parallel=4",

@@ -1,6 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "serverless-configuration": "packages/serverless-configuration"
+    "dialog-js": "packages/dialog-browser"
   }
 }

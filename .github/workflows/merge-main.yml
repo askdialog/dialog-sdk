@@ -55,10 +55,3 @@ jobs:
         run: pnpm nx affected --target=package --parallel=2
       - name: '🧪 Run tests'
         run: pnpm nx affected --targets=test-linter,test-type,test-unit,test-circular --parallel=2
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1-node16
-        with:
-          aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN_PRODUCTION }}
-      - name: '🚀 Deploy main'
-        run: pnpm nx affected --target=deploy-production --parallel=2

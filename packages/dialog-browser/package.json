@@ -1,8 +1,8 @@
 {
-  "name": "@dialog-sdk/serverless-configuration",
-  "private": true,
-  "version": "1.0.0",
-  "license": "UNLICENSED",
+  "name": "@dialog-sdk/dialog-browser",
+  "private": false,
+  "version": "0.1.0",
+  "license": "MIT",
   "sideEffects": false,
   "files": [
     "dist"
@@ -20,26 +20,28 @@
     "package-transpile": "tsup",
     "package-types": "tsc -p tsconfig.build.json",
     "package-types-aliases": "tsc-alias -p tsconfig.build.json",
-    "test": "nx run test-linter && nx run test-type && nx run test-circular",
+    "test": "nx run test-linter && nx run test-type && nx run test-unit && nx run test-circular",
     "test-circular": "pnpm depcruise --config -- .",
     "test-linter": "pnpm linter-base-config .",
     "test-type": "tsc --noEmit --emitDeclarationOnly false",
-    "watch": "pnpm clean && concurrently 'pnpm:package-* --watch'"
-  },
-  "dependencies": {
-    "@swarmion/serverless-helpers": "^0.24.4"
+    "test-unit": "vitest run --coverage --passWithNoTests",
+    "watch": "pnpm clean dist && concurrently 'pnpm:package-* --watch'"
   },
   "devDependencies": {
-    "@types/node": "^18.11.13",
+    "@types/node": "^18.13.0",
+    "@vitest/coverage-c8": "^0.28.5",
     "concurrently": "^7.6.0",
-    "dependency-cruiser": "^12.1.0",
-    "eslint": "^8.29.0",
-    "prettier": "^2.8.1",
-    "rimraf": "^4.0.0",
+    "dependency-cruiser": "^12.9.0",
+    "eslint": "^8.34.0",
+    "json-schema-to-ts": "^2.6.2",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.8.2",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.4",
-    "vitest": "^0.28.0"
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1",
+    "vite-tsconfig-paths": "^4.0.5",
+    "vitest": "^0.28.5"
   }
 }
