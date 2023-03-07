@@ -23,7 +23,7 @@ export class Analytics {
       window.DIALOG_INSTANCE.setWalletAddress(walletAddress);
     }
 
-    const apiUrl = `https://jeg1ovpeu4.execute-api.eu-west-1.amazonaws.com/analytics/wallet`;
+    const apiUrl = `https://dipkpvvsc1.execute-api.eu-west-1.amazonaws.com/analytics/wallet`;
     window.navigator.sendBeacon(
       apiUrl,
       JSON.stringify({
