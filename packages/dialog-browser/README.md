@@ -33,6 +33,51 @@ analytics.identify({
 
 To also be able to track already connected user, you should call the `identify` method on each page load.
 
+# Adding traits
+
+Traits are information about a user that you can include in an identify call.
+You can add the following common traits to your identify call:
+
+- email
+- firstName
+- lastName
+- discordUsername
+- telegramUsername
+- twitterProfileUrl
+- phone
+- createdAt
+
+You can also add a custom trait but for now we only support numeric and string values.
+
+```javascript
+analytics.identify({
+  walletAddress: '0x000000000000000', // your user public wallet address
+  chainId: '0x1', // the EVM chain id on which your user signed in
+  traits: {
+    email: 'yourcustomer@mail.com',
+    firstName: 'Your',
+    lastName: 'Customer',
+    aCustomNumericTrait: 4,
+    aCustomStringTrait: 'a string',
+  },
+});
+```
+
+Once you've sent a custom trait, you must respect the same type for the value in your following `identify` calls.
+
+After the above identify call, you cannot send the following call:
+
+```javascript
+// ❌❌❌
+analytics.identify({
+  walletAddress: '0x000000000000000', // your user public wallet address
+  chainId: '0x1', // the EVM chain id on which your user signed in
+  traits: {
+    aCustomNumericTrait: 'a string in a numerical trait',
+  },
+});
+```
+
 # Questions and Feedback
 
 If you have any questions, issues, or feedback, please file an issue on [GitHub](https://github.com/askdialog/dialog-sdk/issues), or send us an [email](mailto:contact@askdialog.com).
