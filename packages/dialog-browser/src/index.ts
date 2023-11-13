@@ -32,6 +32,7 @@ export class Analytics {
       telegramUsername?: string;
       twitterProfileUrl?: string;
       phone?: string;
+      internalId?: string;
       createdAt?: string;
     } & { [key: string]: string | number };
   }): void {
