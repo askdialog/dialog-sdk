@@ -41,14 +41,14 @@ export class Analytics {
     }
 
     const apiUrl = `${PROD_BASE_API_URL}${IDENTIFY_PATH}?apiKey=${this.apiKey}`;
-    window.navigator.sendBeacon(
-      apiUrl,
-      JSON.stringify({
+    void fetch(apiUrl, {
+      method: 'POST',
+      body: JSON.stringify({
         walletAddress,
         location: window.location.toString(),
         chainId,
         traits,
       }),
-    );
+    });
   }
 }
